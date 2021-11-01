@@ -1,0 +1,86 @@
+@import "./screens.scss";
+@import "./mixins.scss";
+
+.button {
+  outline: none;
+  border: none;
+
+  &--disabled {
+    background-color: #e0e0e0 !important;
+    cursor: not-allowed;
+  }
+}
+
+.nav-sect {
+  border-bottom: 1px solid #e9e9e9;
+
+  .title {
+    text-align: left;
+    padding: 2rem 3rem;
+    @include screen("small") {
+      padding: 1rem;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 43.65px;
+      @include screen("small") {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.otp-input {
+  width: 50px !important;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  height: 50px;
+}
+
+.otp-cont {
+  display: flex;
+  justify-content: center !important;
+}
+
+.input {
+  width: -webkit-fill-available;
+  .input-cont {
+    width: 100%;
+    overflow: hidden;
+    @include screen("inbetween") {
+    }
+
+    .text-input {
+      box-sizing: border-box;
+      height: 50px;
+      padding: 0.75rem;
+      width: 100%;
+      color: #202228;
+      @include screen("inbetween") {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 150%;
+      }
+    }
+    .text-input:focus {
+      outline: none;
+    }
+    .textarea {
+      box-sizing: border-box;
+      padding: 0.75rem;
+      width: 100%;
+      color: #262626;
+      @include screen("inbetween") {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 150%;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
