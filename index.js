@@ -35,14 +35,6 @@ server.on("listening", onListening);
 //   res.status(200).json({ status: 200, data: "Beam Api Service" });
 // });
 
-app.use("/data", indexRouter);
-
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
-
-
 if (process.env.NODE_ENV === "production") {
   // Exprees will serve up production assets
   app.use(express.static("client/build"));
@@ -52,6 +44,14 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
   });
 }
+
+
+app.use("/data", indexRouter);
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
 
 
 function normalizePort(val) {
