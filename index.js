@@ -33,9 +33,9 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.get("/", function (req, res, next) {
-  res.status(200).json({ status: 200, data: "Beam Api Service" });
-});
+// app.get("/", function (req, res, next) {
+//   res.status(200).json({ status: 200, data: "Beam Api Service" });
+// });
 
 app.use("/data", indexRouter);
 
