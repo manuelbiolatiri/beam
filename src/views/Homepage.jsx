@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "../components/button/Button"
 import beamlogo from "../icons/beamlogo.svg"
 import caret from "../icons/caret.svg"
@@ -8,31 +8,47 @@ import onTrack from "../icons/onTrack.svg"
 import behind from "../icons/behind.svg"
 import atRisk from "../icons/atRisk.svg"
 import { Input } from "../components";
-import data from "./dummyData"
-import Chart from "./chart"
+import Chart from "../components/chart"
+import axiosRequest from "../utils/apiServices"
 
 
 const Homepage = () => {
     const [activeTab, setActiveTab] = useState(1)
     const [search, setSearch] = useState('')
+    const [apiData, setApiData] = useState('')
     const [tabs] = useState([{id: 1, label: "People"}, {id: 2, label: "Reporting"}])
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    const fetchData = async () => {        
+        try {
+            const { data } = await axiosRequest("get", "/data");
+            setApiData(data.data)
+        } catch (err) {
+            alert(err)
+            return;
+        }
+    };
 
     const changeTab = (tabNumber) => {
         setActiveTab(tabNumber)
     }
-      const toPercent = data.map(value => {
+
+    const toPercent = apiData && apiData.map(value => {
         let total = value.atRisk + value.behind + value.onTrack;
 
         value.atRisk = Number(((value.atRisk/total)*100).toFixed(2));
         value.behind = Number(((value.behind/total)*100).toFixed(2));
         value.onTrack =Number(((value.onTrack/total)*100).toFixed(2));
         return value;
-      })
-    
-      const handleChange = (e) => {
+    })
+
+    const handleChange = (e) => {
         let val = e.target.value;
         setSearch(val);
-      };
+    };
 
     return (
         <div className="home">
@@ -81,7 +97,7 @@ const Homepage = () => {
 
                     </div>
 
-                    <div className="regist container">
+                    <div className="mainbody container">
 
                         <div className="flex justify-start" style={{borderBottom: "1px solid #EDEDF2"}}> 
                             {tabs.map(tab =>{

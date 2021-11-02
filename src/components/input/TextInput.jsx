@@ -9,10 +9,6 @@ export const Input = ({
   return (
     <div className="input">
       <div className="input-cont">
-        <div className="label">
-          {label && <span className="input-label"> {label} </span>}
-        </div>
-
         <input
           type={rest.type}
           value={value}

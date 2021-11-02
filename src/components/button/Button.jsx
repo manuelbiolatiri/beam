@@ -4,9 +4,8 @@ export const Button = ({ text, login, secondary, active, ...rest }) => {
     <button
       disabled={disabled}
       {...rest}
-      className={`button  ${disabled ? "button--disabled" : ""} ${
-        login ? "login" : ""
-      } ${active && "active"} ${rest.className}`}
+      className={`button  ${disabled ? "button--disabled" : ""}
+      ${active && "active"} ${rest.className}`}
     >
       {text}
     </button>

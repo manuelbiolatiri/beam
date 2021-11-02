@@ -11,38 +11,6 @@
   }
 }
 
-.nav-sect {
-  border-bottom: 1px solid #e9e9e9;
-
-  .title {
-    text-align: left;
-    padding: 2rem 3rem;
-    @include screen("small") {
-      padding: 1rem;
-    }
-    h2 {
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 43.65px;
-      @include screen("small") {
-        font-size: 28px;
-      }
-    }
-  }
-}
-
-.otp-input {
-  width: 50px !important;
-  background-color: #f6f6f6;
-  border-radius: 10px;
-  height: 50px;
-}
-
-.otp-cont {
-  display: flex;
-  justify-content: center !important;
-}
-
 .input {
   width: -webkit-fill-available;
   .input-cont {
