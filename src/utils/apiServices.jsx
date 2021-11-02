@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosRequest = (requestType, appendUrl, payload) => {
 
-  const baseUrl = `http://localhost:3000`;
+  const baseUrl = `https://beamadmin.herokuapp.com`;
   const requestUrl = `${baseUrl}${appendUrl}`;
 
   let config;

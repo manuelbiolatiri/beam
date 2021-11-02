@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.624cf919.chunk.css",
+    "main.js": "/static/js/main.b8b30f08.chunk.js",
+    "main.js.map": "/static/js/main.b8b30f08.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.de94abfb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.de94abfb.js.map",
+    "static/js/2.dc8292bb.chunk.js": "/static/js/2.dc8292bb.chunk.js",
+    "static/js/2.dc8292bb.chunk.js.map": "/static/js/2.dc8292bb.chunk.js.map",
+    "static/js/3.5caf8814.chunk.js": "/static/js/3.5caf8814.chunk.js",
+    "static/js/3.5caf8814.chunk.js.map": "/static/js/3.5caf8814.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.624cf919.chunk.css.map": "/static/css/main.624cf919.chunk.css.map",
+    "static/js/2.dc8292bb.chunk.js.LICENSE.txt": "/static/js/2.dc8292bb.chunk.js.LICENSE.txt",
+    "static/media/atRisk.c5a73cb4.svg": "/static/media/atRisk.c5a73cb4.svg",
+    "static/media/beamlogo.571150f5.svg": "/static/media/beamlogo.571150f5.svg",
+    "static/media/behind.77955599.svg": "/static/media/behind.77955599.svg",
+    "static/media/blackcaret.a6d359e0.svg": "/static/media/blackcaret.a6d359e0.svg",
+    "static/media/caret.64941ba5.svg": "/static/media/caret.64941ba5.svg",
+    "static/media/onTrack.1cb77c17.svg": "/static/media/onTrack.1cb77c17.svg",
+    "static/media/rightarrow.e28b1041.svg": "/static/media/rightarrow.e28b1041.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de94abfb.js",
+    "static/js/2.dc8292bb.chunk.js",
+    "static/css/main.624cf919.chunk.css",
+    "static/js/main.b8b30f08.chunk.js"
+  ]
+}

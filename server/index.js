@@ -39,7 +39,6 @@ app.get("/", function (req, res, next) {
 
 app.get("/data", (req, res, next) => {
     try {
-        console.log(dummyData)
         return res.status(200).send({data: dummyData});
     } catch (err){
         console.log(err)
@@ -53,7 +52,7 @@ app.use(function (req, res, next) {
 });
 
 
-const port = normalizePort(process.env.PORT || 3000);
+const port = normalizePort(process.env.PORT || 5000);
 app.set("port", port);
 
 server.listen(port);
