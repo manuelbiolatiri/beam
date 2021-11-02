@@ -31,9 +31,9 @@ server.listen(port);
 server.on("error", onError);
 server.on("listening", onListening);
 
-app.get("/", function (req, res, next) {
-  res.status(200).json({ status: 200, data: "Beam Api Service" });
-});
+// app.get("/", function (req, res, next) {
+//   res.status(200).json({ status: 200, data: "Beam Api Service" });
+// });
 
 app.use("/data", indexRouter);
 
