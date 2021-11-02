@@ -23,19 +23,17 @@ app.use((req, res, next) => {
   next();
 });
 
-if (process.env.NODE_ENV === "production") {
-  // Exprees will serve up production assets
-  app.use(express.static("client/build"));
+const port = normalizePort(process.env.PORT || 5001);
+app.set("port", port);
 
-  // Express serve up index.html file if it doesn't recognize route
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
-  });
-}
+server.listen(port);
 
-// app.get("/", function (req, res, next) {
-//   res.status(200).json({ status: 200, data: "Beam Api Service" });
-// });
+server.on("error", onError);
+server.on("listening", onListening);
+
+app.get("/", function (req, res, next) {
+  res.status(200).json({ status: 200, data: "Beam Api Service" });
+});
 
 app.use("/data", indexRouter);
 
@@ -45,13 +43,15 @@ app.use(function (req, res, next) {
 });
 
 
-const port = normalizePort(process.env.PORT || 5001);
-app.set("port", port);
+if (process.env.NODE_ENV === "production") {
+  // Exprees will serve up production assets
+  app.use(express.static("client/build"));
 
-server.listen(port);
-
-server.on("error", onError);
-server.on("listening", onListening);
+  // Express serve up index.html file if it doesn't recognize route
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+  });
+}
 
 
 function normalizePort(val) {
