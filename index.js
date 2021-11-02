@@ -33,7 +33,11 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.use("/", indexRouter);
+app.get("/", function (req, res, next) {
+  res.status(200).json({ status: 200, data: "Beam Api Service" });
+});
+
+app.use("/data", indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

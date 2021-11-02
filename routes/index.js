@@ -4,10 +4,6 @@ const dummyData = require("../dummyData")
 let router = express.Router();
 
 router.get("/", function (req, res, next) {
-  res.status(200).json({ status: 200, data: "Beam Api Service" });
-});
-
-router.get("/data", function (req, res, next) {
         try {
             return res.status(200).send({data: dummyData});
         } catch (err){
