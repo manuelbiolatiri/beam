@@ -5,7 +5,7 @@ const createError = require("http-errors");
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const dummyData = require("./dummyData")
+const indexRouter = require("./routes");
 
 const app = express();
 const server = http.createServer(app);
@@ -33,18 +33,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.get("/", function (req, res, next) {
-    res.status(200).send({ data: "Beam Api Service" });
-});
-
-app.get("/data", (req, res, next) => {
-    try {
-        return res.status(200).send({data: dummyData});
-    } catch (err){
-        console.log(err)
-        return res.status(500).send({error: '!Oops something went wrong, we are looking at it'})
-    }
-});
+app.use("/", indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
